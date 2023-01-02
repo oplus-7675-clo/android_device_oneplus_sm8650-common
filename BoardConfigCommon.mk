@@ -193,6 +193,9 @@ BOARD_EROFS_PCLUSTER_SIZE := 262144
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
 
+# Power
+TARGET_POWER_FEATURE_EXT_LIB := //hardware/oplus:libpowerfeature_ext_oplus
+
 # Properties
 TARGET_ODM_PROP += $(COMMON_PATH)/odm.prop
 TARGET_PRODUCT_PROP += $(COMMON_PATH)/product.prop

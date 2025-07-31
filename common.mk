@@ -202,14 +202,6 @@ PRODUCT_PACKAGES += \
 
 $(call soong_config_set,libinit,vendor_init_lib,//$(LOCAL_PATH):libinit_oplus)
 
-# IPACM
-ifneq ($(TARGET_IS_TABLET),true)
-PRODUCT_PACKAGES += \
-    ipacm \
-    IPACM_cfg.xml \
-    IPACM_Filter_cfg.xml
-endif
-
 # IR
 ifneq ($(TARGET_IS_TABLET),true)
 PRODUCT_PACKAGES += \
@@ -328,7 +320,7 @@ TARGET_COMMON_QTI_COMPONENTS := \
 
 # QTI fwk-detect
 PRODUCT_PACKAGES += \
-    libvndfwk_detect_jni.qti_vendor # Needed by CNE app
+    CneApp.libvndfwk_detect_jni.qti_symlink # Needed by CNE app
 
 # QSPA
 PRODUCT_PACKAGES += \
@@ -383,19 +375,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 # Telephony
 ifneq ($(TARGET_IS_TABLET),true)
 PRODUCT_PACKAGES += \
-    nrmodeswitcher \
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.cdma.xml \
-    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.gsm.xml \
-    frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.ims.xml \
-    frameworks/native/data/etc/android.hardware.telephony.mbms.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.mbms.xml
+    nrmodeswitcher
 
 $(call inherit-product, hardware/oplus/oplus-fwk/oplus-fwk.mk)
 endif
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml
 
 # Thermal
 PRODUCT_PACKAGES += \

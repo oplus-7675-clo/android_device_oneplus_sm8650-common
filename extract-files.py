@@ -23,6 +23,7 @@ namespace_imports = [
     'vendor/qcom/common/system/av',
     'vendor/qcom/common/system/display',
     'vendor/qcom/common/system/perf',
+    'vendor/qcom/common/vendor/perf',
 ]
 
 
@@ -49,15 +50,12 @@ lib_fixups: lib_fixups_user_type = {
         'vendor.qti.hardware.iop@2.0',
         'vendor.qti.hardware.limits@1.0',
         'vendor.qti.hardware.limits@1.1',
-        'vendor.qti.hardware.perf2-V1-ndk',
         'vendor.qti.hardware.qxr-V1-ndk',
         'vendor.qti.hardware.vpp-V1-ndk',
         'vendor.qti.hardware.wifidisplaysession@1.0',
         'vendor.qti.imsrtpservice@3.0',
         'vendor.qti.imsrtpservice@3.1',
         'vendor.qti.qccvndhal_aidl-V1-ndk',
-        'vendor.qti.qspmhal-V1-ndk',
-        'vendor.qti.qspmhal@1.0',
     ): lib_fixup_vendor_suffix,
 }
 
@@ -104,8 +102,6 @@ blob_fixups: blob_fixups_user_type = {
             r'(service\s+vendor\.dpmd\s+/vendor/bin/vendor\.dpmd\s*\n)',
             r'\1    user root\n'
         ),
-    'vendor/etc/pwr/PowerFeatureConfig.xml': blob_fixup()
-        .regex_replace(r'(<Name>GamePowerOptFeature</Name>\s*<Enable>)0(<\/Enable>)', r'\g<1>1\g<2>'),
     'vendor/etc/seccomp_policy/gnss@2.0-qsap-location.policy': blob_fixup()
         .add_line_if_missing('sched_get_priority_min: 1')
         .add_line_if_missing('sched_get_priority_max: 1'),

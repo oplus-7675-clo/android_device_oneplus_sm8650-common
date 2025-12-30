@@ -17,6 +17,7 @@ subsystem adf
 firmware_directories /mnt/vendor/persist/display/
 
 # Reserve
+/dev/block/by-name/oplusreserve1               0660    root    system
 /dev/block/bootdevice/by-name/oplusreserve1    0660    root    system
 /dev/block/sdf2   0660   root     system
 /dev/block/bootdevice/by-name/oplusreserve3    0660    root    system

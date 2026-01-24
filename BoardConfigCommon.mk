@@ -88,6 +88,7 @@ BOARD_BOOTCONFIG := \
     androidboot.hypervisor.protected_vm.supported=true \
     androidboot.load_modules_parallel=true \
     androidboot.memcg=1 \
+    androidboot.selinux=permissive \
     androidboot.vendor.qspa=true \
     androidboot.usbcontroller=a600000.dwc3
 
@@ -211,9 +212,6 @@ ENABLE_VENDOR_RIL_SERVICE := true
 # Security
 BOOT_SECURITY_PATCH := 2025-09-01
 VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
-
-# SEPolicy
-include hardware/oplus/sepolicy/qti/SEPolicy.mk
 
 # UFS
 SOONG_CONFIG_NAMESPACES += ufsbsg

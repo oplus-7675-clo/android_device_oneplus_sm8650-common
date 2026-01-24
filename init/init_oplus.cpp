@@ -87,3 +87,7 @@ void vendor_process_bootenv() {
         }
     }
 }
+
+void vendor_load_properties() {
+    // Dummy implementation
+}

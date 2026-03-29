@@ -11,6 +11,7 @@ from extract_utils.fixups_blob import (
 from extract_utils.fixups_lib import (
     lib_fixups,
     lib_fixups_user_type,
+    lib_fixup_remove,
 )
 from extract_utils.main import (
     ExtractUtils,
@@ -20,8 +21,7 @@ from extract_utils.main import (
 namespace_imports = [
     'device/oneplus/sm8650-common',
     'hardware/oplus',
-    'hardware/qcom-caf/sm8650',
-    'hardware/qcom-caf/wlan',
+    'hardware/qcom/wlan',
     'vendor/qcom/opensource/commonsys/display',
     'vendor/qcom/opensource/commonsys-intf/display',
     'vendor/qcom/opensource/dataservices',
@@ -48,11 +48,15 @@ lib_fixups: lib_fixups_user_type = {
         'vendor.qti.hardware.qccsyshal@1.0',
         'vendor.qti.hardware.qccsyshal@1.1',
         'vendor.qti.hardware.qccsyshal@1.2',
+        'vendor.qti.hardware.qxr-V1-ndk',
         'vendor.qti.hardware.wifidisplaysession@1.0',
         'vendor.qti.imsrtpservice@3.0',
         'vendor.qti.imsrtpservice@3.1',
         'vendor.qti.qccvndhal_aidl-V1-ndk',
     ): lib_fixup_vendor_suffix,
+    (
+        'libwpa_client',
+    ): lib_fixup_remove,
 }
 
 blob_fixups: blob_fixups_user_type = {

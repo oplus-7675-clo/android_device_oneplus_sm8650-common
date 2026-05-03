@@ -97,6 +97,7 @@ vendor.audio_hal.period_size=192
 vendor.qc2audio.per_frame.flac.dec.enabled=true
 vendor.qc2audio.suspend.enabled=true
 vendor.voice.path.for.pcm.voip=true
+ro.mediaserver.64b.enable=true
 
 # Bluetooth
 bluetooth.device.class_of_device=90,2,12
@@ -206,7 +207,6 @@ debug.sf.earlyGl.app.duration=13666666
 debug.sf.earlyGl.sf.duration=10500000
 debug.sf.enable_advanced_sf_phase_offset=1
 debug.sf.enable_gl_backpressure=0
-debug.sf.enable_hwc_vds=0
 debug.sf.late.app.duration=13666666
 debug.sf.late.sf.duration=10500000
 debug.sf.predict_hwc_composition_strategy=0
@@ -241,6 +241,10 @@ vendor.media.omx=0
 vendor.pasr.activemode.enabled=true
 
 # Perf
+ro.vendor.beluga.c=0x4800
+ro.vendor.beluga.p=0x3
+ro.vendor.beluga.s=0x900
+ro.vendor.beluga.t=0x240
 ro.vendor.extension_library=libqti-perfd-client.so
 ro.vendor.perf-hal.ver=3.0
 ro.vendor.perf.scroll_opt=1

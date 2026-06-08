@@ -100,6 +100,9 @@ PRODUCT_COPY_FILES += \
 # Characteristics
 PRODUCT_CHARACTERISTICS := nosdcard
 
+# ConsumerIR
+PRODUCT_PACKAGES += ConsumerIRApp
+
 # Context Hub
 ifneq ($(TARGET_IS_TABLET),true)
 PRODUCT_COPY_FILES += \

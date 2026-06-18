@@ -169,6 +169,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     fstab.qcom \
+    init.aospa.rc \
     init.class_main.sh \
     init.kernel.post_boot.sh \
     init.kernel.post_boot-cliffs_default_3_4_1.sh \
